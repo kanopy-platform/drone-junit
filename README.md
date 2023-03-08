@@ -12,11 +12,9 @@ The JUnit specification was chosen because all popular testing frameworks have a
 
  The `cards.json` is packaged and served from Github Pages.  This is strictly the presentation layer.
 
-
 ## Example Pipeline
 
 The plugin currently the unit test file to be named `unit-tests.xml` This may be changed later to allow customization.
-
 
 ```yaml
 ---
