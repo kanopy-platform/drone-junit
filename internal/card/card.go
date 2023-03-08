@@ -18,7 +18,7 @@ func WriteCard(suite *junit.Testsuites) error {
 	}
 
 	card := &drone.CardInput{
-		Schema: "https://example.com/card.json",
+		Schema: "https://kanopy-platform.github.io/drone-junit/card.json",
 		Data:   cardData,
 	}
 
