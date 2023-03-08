@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="2">
+	<testsuite name="sample-web-app" tests="0" failures="0" errors="0" id="0" hostname="sample-host" time="0.000" timestamp="2023-03-08T09:48:41-05:00"></testsuite>
+	<testsuite name="sample-web-app/internal/cli" tests="0" failures="0" errors="0" id="1" hostname="sample-host" time="0.000" timestamp="2023-03-08T09:48:41-05:00"></testsuite>
+	<testsuite name="sample-web-app/internal/version" tests="0" failures="0" errors="0" id="2" hostname="sample-host" time="0.000" timestamp="2023-03-08T09:48:41-05:00"></testsuite>
+	<testsuite name="sample-web-app/internal/server" tests="2" failures="0" errors="0" id="3" hostname="sample-host" time="0.097" timestamp="2023-03-08T09:48:41-05:00">
+		<testcase name="TestHandleRoot" classname="sample-web-app/internal/server" time="0.000"></testcase>
+		<testcase name="TestHandleHealthz" classname="sample-web-app/internal/server" time="0.000">
+			<system-out><![CDATA[time="2023-03-08T09:48:41-05:00" level=info msg=handled bytes=12 host=192.0.2.1 method=GET path=/ proto=HTTP/1.1 referer= status=200 time_ms=0 user_agent=
+time="2023-03-08T09:48:41-05:00" level=info msg=handled bytes=15 host=192.0.2.1 method=GET path=/healthz proto=HTTP/1.1 referer= status=200 time_ms=0 user_agent=]]></system-out>
+		</testcase>
+	</testsuite>
+</testsuites>
