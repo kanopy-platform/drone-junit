@@ -4,7 +4,7 @@ import "encoding/xml"
 
 // Testsuites is a collection of JUnit testsuites.
 type Testsuites struct {
-	XMLName xml.Name `xml:"testsuites"`
+	XMLName xml.Name `xml:"testsuites" json:"-"`
 
 	Name     string `xml:"name,attr,omitempty" json:"name,omitempty"`
 	Time     string `xml:"time,attr,omitempty" json:"time,omitempty"` // total duration in seconds
@@ -34,27 +34,27 @@ type Testsuite struct {
 	Timestamp string `xml:"timestamp,attr,omitempty" json:"timestamp"` // date and time in ISO8601
 	File      string `xml:"file,attr,omitempty" json:"file"`
 
-	Properties *[]Property `xml:"properties>property,omitempty"`
-	TestCases  []Testcase  `xml:"testcase,omitempty"`
-	SystemOut  *Output     `xml:"system-out,omitempty"`
-	SystemErr  *Output     `xml:"system-err,omitempty"`
+	Properties *[]Property `xml:"properties>property,omitempty" json:"properties,omitempty"`
+	TestCases  []Testcase  `xml:"testcase,omitempty" json:"testCases,omitempty"`
+	SystemOut  *Output     `xml:"system-out,omitempty" json:"systemOut,omitempty"`
+	SystemErr  *Output     `xml:"system-err,omitempty" json:"systemErr,omitempty"`
 }
 
 // Testcase represents a single test with its results.
 type Testcase struct {
 	// required attributes
-	Name      string `xml:"name,attr"`
-	ClassName string `xml:"classname,attr"`
+	Name      string `xml:"name,attr" json:"name"`
+	ClassName string `xml:"classname,attr" json:"className"`
 
 	// optional attributes
 	Time   string `xml:"time,attr,omitempty" json:"time"` // duration in seconds
 	Status string `xml:"status,attr,omitempty" json:"status"`
 
-	Skipped   *Result `xml:"skipped,omitempty" json:"skipped"`
-	Error     *Result `xml:"error,omitempty" json:"error"`
-	Failure   *Result `xml:"failure,omitempty" json:"failure"`
-	SystemOut *Output `xml:"system-out,omitempty" json:"systemOut"`
-	SystemErr *Output `xml:"system-err,omitempty" json:"systemErr"`
+	Skipped   *Result `xml:"skipped,omitempty" json:"skipped,omitempty"`
+	Error     *Result `xml:"error,omitempty" json:"error,omitempty"`
+	Failure   *Result `xml:"failure,omitempty" json:"failure,omitempty"`
+	SystemOut *Output `xml:"system-out,omitempty" json:"systemOut,omitempty"`
+	SystemErr *Output `xml:"system-err,omitempty" json:"systemErr,omitempty"`
 }
 
 // Property represents a key/value pair.
