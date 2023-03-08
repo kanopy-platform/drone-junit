@@ -3,6 +3,7 @@ package card
 import (
 	"encoding/base64"
 	"encoding/json"
+	"fmt"
 	"io"
 	"os"
 
@@ -16,6 +17,8 @@ func WriteCard(suite *junit.Testsuites) error {
 	if err != nil {
 		return err
 	}
+
+	fmt.Println(string(cardData))
 
 	card := &drone.CardInput{
 		Schema: "https://kanopy-platform.github.io/drone-junit/card.json",
