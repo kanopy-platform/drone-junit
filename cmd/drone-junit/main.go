@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/kanopy-platform/drone-junit/internal/card"
 	"github.com/kanopy-platform/drone-junit/internal/junit"
 )
@@ -11,7 +13,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-
+	fmt.Println("writing card")
 	if err := card.WriteCard(suites); err != nil {
 		panic(err)
 	}
