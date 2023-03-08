@@ -6,7 +6,6 @@ import (
 )
 
 func main() {
-
 	suites, err := junit.Read("/tmp/unit-tests.xml") // TODO customize path with arg
 	if err != nil {
 		panic(err)
@@ -15,5 +14,4 @@ func main() {
 	if err := card.WriteCard(suites); err != nil {
 		panic(err)
 	}
-
 }
