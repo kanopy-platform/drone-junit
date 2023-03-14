@@ -1,0 +1,15 @@
+---
+kind: pipeline
+type: kubernetes
+name: default
+
+trigger:
+  branch:
+    - main
+
+steps:
+  - name: test
+    image: golang:1.20 
+    commands:
+      - go mod download
+      - make test
